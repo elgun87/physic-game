@@ -16,17 +16,17 @@ function userInput(e) {
     let userChoise = e.key;
     let compChoise = letters[getRandomInteger(0,letters.length-1)];
     if(userChoise == compChoise){
-        document.getElementById('wins').innerHTML = "Wins : " + " " + ++wins;
+        document.getElementById('wins').innerHTML = ++wins;
         guessed = [];
     }
     else {
         guessed.push(compChoise);
-        document.getElementById('guess-left').innerHTML = "Guessleft : " + guessLeft --;
-        document.getElementById('guessed').innerHTML = "Guessed : " + " " + guessed;
+        document.getElementById('guess-left').innerHTML = guessLeft --;
+        document.getElementById('guessed').innerHTML = guessed;
         if(guessLeft == 0){
             guessed = [];
             guessLeft = 9;
-            document.getElementById('losses').innerHTML = "Losses " + " " + ++losses;
+            document.getElementById('losses').innerHTML = ++losses;
         }
     }
 }
